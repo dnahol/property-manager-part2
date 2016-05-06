@@ -9,9 +9,11 @@ app.controller('homeCtrl', function() {
 app.controller('propertiesCtrl', function(allProps, $scope) {
   $scope.properties = allProps;
 });
-app.controller('tenantsCtrl', function(allTenants) {
+app.controller('tenantsCtrl', function($scope, allTenants) {
   console.log('tenantsCtrl!');
-    console.log('allTenants: ', allTenants);
+  console.log('allTenants: ', allTenants);
+  $scope.tenants = allTenants;
+
 });
 app.controller('propertyDetailCtrl', function(property, $scope) {
   $scope.property = property;

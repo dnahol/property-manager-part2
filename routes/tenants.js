@@ -10,6 +10,7 @@ router.route('/')
   .get((req, res) => {
     Tenant
     .find({})
+    .populate('property')
     .exec(res.handle);
   })
   .post((req, res) => {
@@ -20,7 +21,7 @@ router.route('/:id')
   .get((req, res) => {
     Tenant
     .findById(req.params.id)
-    .populate('tenants')
+    .populate('property')
     .exec(res.handle)
   })
   .delete((req, res) => {

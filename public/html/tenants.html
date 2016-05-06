@@ -7,5 +7,31 @@
 <body>
   <h1>Tenants</h1>
 
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <table class="table table-hover">
+        <tbody>
+          <tr ng-repeat='tenant in tenants track by $index'>
+            <td ui-sref='tenantDetail({id: tenant._id})'>
+              {{tenant.name}}
+            </td>
+            <td>
+              {{tenant.email}}
+            </td>
+            <td>
+              {{tenant.phone}}
+            </td>
+            <td>
+              {{tenant.children}}
+            </td>
+            <td>
+              {{tenant.property.address}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </body>
 </html>
