@@ -1,11 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Property Details</title>
-</head>
-<body>
-  <h1>Property Details</h1>
 
-</body>
-</html>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td>Address: </td>
+            <td>
+              {{property.address}}
+            </td>
+          </tr>
+          <tr>
+            <td>Rent: </td>
+            <td>
+              ${{property.rentPrice}}
+            </td>
+          </tr>
+
+          <tr>
+            <td>Utilities: </td>
+            <td>
+              ${{property.utilitiesCost}}
+            </td>
+          </tr>
+          <tr>
+            <td>Bd: </td>
+            <td>
+              {{property.bedrooms}}
+            </td>
+          </tr>
+          <tr>
+            <td>Sq: </td>
+            <td>
+              {{property.sq}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-hover">
+        <tbody>
+          <tr>Tenants for {{property.address}} </tr>
+          <tr ng-repeat='tenant in property.tenants'>
+            <td>
+              {{tenant.name}}
+            </td>
+            <td>
+              {{tenant.email}}
+            </td>
+            <td>
+              {{tenant.phone}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+
+
+</div>

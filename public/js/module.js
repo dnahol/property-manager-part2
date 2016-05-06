@@ -40,6 +40,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     resolve: {
       property:
       function(Properties, $stateParams) {
+        console.log('$stateParams: ', $stateParams);
         return Properties.getById($stateParams.id);
       }
     }

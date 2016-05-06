@@ -65,6 +65,7 @@ app.service('Tenants', function($http, $q) {
   this.getById = id => {
     return $http.get(`/api/tenants/${id}`)
     .then(res => {
+      console.log('res.data: ', res.data)
       return $q.resolve(res.data);
     })
   };
