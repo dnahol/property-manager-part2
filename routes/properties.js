@@ -42,6 +42,12 @@ router.route('/:propId/tenants/:tenantId')
     Property.removeTenant(propId, tenantId, res.handle);
   })
 
+// router.route('/summary')
+//   .get((req, res) => {
+//     Property.summary(res.handle);
+//   })
+
+
 
 
 

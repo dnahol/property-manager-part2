@@ -6,47 +6,63 @@ app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: 'html/home.html',
+    templateUrl: '/html/home.html',
     controller: 'homeCtrl',
   })
   .state('properties', {
     url: '/properties',
-    templateUrl: 'html/properties.html',
+    templateUrl: '/html/properties.html',
     controller: 'propertiesCtrl',
-    // resolve: {
-    //   allProperties:
-    //   //  function(Property) {
-    //   //    return Property.getAll();
-    //   //    }
-    // }
+    resolve: {
+      allProps:
+      function(Properties) {
+        return Properties.getAll();
+      }
+    }
   })
 
   .state('tenants', {
     url: '/tenants',
-    templateUrl: 'html/tenants.html',
+    templateUrl: '/html/tenants.html',
     controller: 'tenantsCtrl',
-    // resolve: {
-    //   allTenants:
-    //   //  function(Tenant) {}
-    // }
+    resolve: {
+      allTenants:
+      function(Tenants) {
+        return Tenants.getAll();
+      }
+    }
   })
 
   .state('propertyDetail', {
-    url: '/property/detail',
-    templateUrl: 'propertyDetail.html',
+    url: '/property/detail/:id',
+    templateUrl: '/html/propertyDetail.html',
     controller: 'propertyDetailCtrl',
-    // resolve: {
-    //   property:
-    //   //  function(Tenant) {}
-    // }
+    resolve: {
+      property:
+      function(Properties, $stateParams) {
+        return Properties.getById($stateParams.id);
+      }
+    }
   })
 
   .state('tenantDetail', {
-    url: '/tenants/detail',
-    templateUrl: 'tenantDetail.html',
+    url: '/tenant/detail/:id',
+    templateUrl: '/html/tenantDetail.html',
     controller: 'tenantDetailCtrl',
+    resolve: {
+      tenant:
+      function(Tenants, $stateParams) {
+        console.log('$stateParams: ', $stateParams);
+        return Tenants.getById($stateParams.id);
+      }
+    }
+  })
+  .state('summary', {
+    url: '/summary',
+    templateUrl: 'html/summary.html',
+    controller: 'summmaryCtrl',
     // resolve: {
-    //   tenant:
+    //   summaryData:
     //   //    function(Tenant){}
     // }
   })

@@ -15,6 +15,11 @@ var propertySchema = new mongoose.Schema({
 })
 
 
+// propertySchema.statics.summary = function(cb) {
+//
+//   return cb({ok: 'ok'})
+// };
+
 propertySchema.statics.addTenant = function(propId, tenantId, cb) {
   Property.findById(propId, (err1, prop) => {
     Tenant.findById(tenantId, (err2, tenant) => {
@@ -50,6 +55,7 @@ propertySchema.statics.removeTenant = function(propId, tenantId, cb) {
     prop.save(cb);
   });
 };
+
 
 
 var Property = mongoose.model('Property', propertySchema);
