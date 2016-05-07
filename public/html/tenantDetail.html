@@ -7,5 +7,34 @@
 <body>
   <h1>Tenant Details</h1>
 
+
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td>
+              {{tenant.name}}
+            </td>
+            <td>
+              {{tenant.email}}
+            </td>
+            <td>
+              {{tenant.phone}}
+            </td>
+            <td>
+              {{tenant.children}}
+            </td>
+            <td>
+              {{tenant.property.address}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
 </body>
 </html>

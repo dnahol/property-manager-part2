@@ -18,9 +18,10 @@ app.controller('tenantsCtrl', function($scope, allTenants) {
 app.controller('propertyDetailCtrl', function(property, $scope) {
   $scope.property = property;
 });
-app.controller('tenantDetailCtrl', function(tenant) {
+app.controller('tenantDetailCtrl', function($scope, tenant) {
   console.log('tenantDetailCtrl!');
   console.log('tenant: ', tenant);
+  $scope.tenant = tenant;
 });
 app.controller('summmaryCtrl', function() {
   console.log('summmaryCtrl!');

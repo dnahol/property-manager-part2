@@ -11,18 +11,9 @@
     <div class="col-xs-6 col-xs-offset-3">
       <table class="table table-hover">
         <tbody>
-          <tr ng-repeat='tenant in tenants track by $index'>
-            <td ui-sref='tenantDetail({id: tenant._id})'>
+          <tr ng-repeat='tenant in tenants track by $index' ui-sref='tenantDetail({id: tenant._id})'>
+            <td>
               {{tenant.name}}
-            </td>
-            <td>
-              {{tenant.email}}
-            </td>
-            <td>
-              {{tenant.phone}}
-            </td>
-            <td>
-              {{tenant.children}}
             </td>
             <td>
               {{tenant.property.address}}
